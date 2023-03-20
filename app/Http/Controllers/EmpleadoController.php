@@ -16,8 +16,10 @@ class EmpleadoController extends Controller
     public function index()
     {
         $empleados = Empleado::all();
+   
+        $generos = $tipos=config('options.generos');
 
-        return view('empleados.index', compact('empleados'));
+        return view('empleados.index', compact('empleados', 'generos'));
     }
 
     /**
@@ -27,7 +29,7 @@ class EmpleadoController extends Controller
      */
     public function create()
     {
-        //
+        return view('empleados.create');
     }
 
     /**
@@ -38,6 +40,7 @@ class EmpleadoController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $data = request()->validate([
             'PrimerNombre'=> 'required',
             'SegundoNombre'=> '',
@@ -52,6 +55,8 @@ class EmpleadoController extends Controller
             'FechaNacimiento'=> 'required'
         ]);
 
+    
+
       $empleado =  Empleado::create($data);
 
       return redirect('/empleados/' . $empleado->id);
@@ -65,7 +70,10 @@ class EmpleadoController extends Controller
      */
     public function show(Empleado $empleado)
     {
-        return view('empleados.show', compact('empleado'));
+
+        $generos = $tipos=config('options.generos');
+
+        return view('empleados.show', compact('empleado', 'generos'));
     }
 
     /**
@@ -76,7 +84,7 @@ class EmpleadoController extends Controller
      */
     public function edit(Empleado $empleado)
     {
-        //
+        return view('empleados.edit', compact('empleado'));
     }
 
     /**
