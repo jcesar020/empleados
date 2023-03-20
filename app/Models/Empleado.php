@@ -13,6 +13,13 @@ class Empleado extends Model
 
     protected $dateFormat = 'd-m-Y';
 
+    /**
+     * obtiene la educacion del empleado.
+     */
+    public function educacion()
+    {
+        return $this->hasMany(Empleado::class);
+    }
 
 
 }
