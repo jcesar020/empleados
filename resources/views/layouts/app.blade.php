@@ -34,6 +34,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/empleados">Empleados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/carrreras">Carrera</a>
+                        </li>
 
                     </ul>
 
