@@ -91,7 +91,7 @@ class EmpleadoManagementTest extends TestCase
  
          $response = $this->put('/empleados/'. $empleado->id, [
              'PrimerNombre' => 'primerNombre',
-             'SegundoNombre' => 'segundoNombre',
+            //  'SegundoNombre' => 'segundoNombre',
              'TercerNombre' =>'tercerNombre',
              'PrimerApellido' => 'primerApellido',
              'SegundoApellido' => 'segundoApellido',
